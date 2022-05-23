@@ -9,21 +9,20 @@ badge: 'Version: 0.23'
 <img src="/preview.png" class="light-img" width="1280" height="640" alt=""/>
 <img src="/preview-dark.png" class="dark-img" width="1280" height="640" alt=""/>
 
-This document describes the im4 `API` for external systems.
+This document describes the **im4** and **memographics** `API` for external systems.
+
+<p class="flex items-center">Enjoy light and dark mode:&nbsp;<app-color-switcher class="inline-flex ml-2"></app-color-switcher></p>
 
 <alert type="warning">
 Note: This document is under development, and changes will occur!
 </alert>
 
-<p class="flex items-center">Enjoy light and dark mode:&nbsp;<app-color-switcher class="inline-flex ml-2"></app-color-switcher></p>
+API notation and code examples will be shown as follows:
 
-API notation and code examples will be shown as follows:  
-Client-URI: `https://<im4>/api/<api-uri>` (valid for Client auth)  
-Request-type: `<HTTP request type>`  
-Parameters:  
-`parameter1 (data type): value or description ...`  
-Return data:  
-`return data (data type): value or description`
+- **Client-URI:** `https://<im4>/api/<api-uri>` (valid for Client auth)
+- **Request-type:** `<HTTP request type>`
+- **Parameters:** `parameter1 (data type): value or description ...`
+- **Return data:** `return data (data type): value or description`
 
 <badge>Since: Implemented since this API version</badge>
 
@@ -31,13 +30,13 @@ Description of the function with parameters etc given underneath the API declara
 
 ## Agency setup
 
-Every agency that is configured in the application, can set up their own list of authenticated external systems. These external systems are technically connected to a separate user account in inMemory. This separate user belongs to an agency, and the agency administrator has to enable the external API functionality in order to set up the external systems. These external systems will be assigned a client id and a client secret which needs to be used while accessing the API.
+Every agency that is configured in the application, can set up their own list of authenticated external systems. These external systems are technically connected to a separate user account in inmemory or memographics. This separate user belongs to an agency, and the agency administrator has to enable the external `API` functionality in order to set up the external systems. These external systems will be assigned a client id and a client secret which needs to be used while accessing the `API`.
 
-The list of authenticated external systems is available in the agency administration part of **inmemory**.
+The list of authenticated external systems is available in the agency administration part of **inmemory** or **memographics**.
 
 ## User login
 
-Every available user with the proper access configured in agencies can use the APP API. Login is username/password-based with subsequent exchange of access tokens.
+Every available user with the proper access configured in agencies can use the `APP API`. Login is username/password-based with subsequent exchange of access tokens.
 
 ## Data format
 

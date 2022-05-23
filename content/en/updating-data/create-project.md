@@ -14,14 +14,9 @@ External systems can create new projects for the agency. Required data are the f
 URI: https://<im4>/project
 ```
 
-**Request-type:** `POST`
-
-**Parameters:**
-
-- `{data}`: `JSON`
-
-**Return data:**
-
-- `{project-id}` `(integer)`
+- **Request-type:** `POST`
+- **Parameters:** `{data}`: `JSON`
+- **Return data:**
+  `{project-id}` `(integer)`
 
 Creates a new project and returns `project-id`. Data must be provided as a `JSON` array. Required fields are `subject_firstname` and `subject_lastname`. Any other valid project key can be specified as well (see [Helper function](/updating-data/file-uploading#helper-functions)).

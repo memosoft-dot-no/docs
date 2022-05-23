@@ -1,6 +1,6 @@
 ---
 title: File uploading
-description: ''
+description: 'The API supports uploading one or more files with the same request. The files can be uploaded to a given category, or as an uncategorized file.'
 position: 6
 category: 'Updating data'
 ---
@@ -15,14 +15,10 @@ The API supports uploading one or more files with the same request. The files ca
 URI: https://<im4>/project/{projectId}/files/categories
 ```
 
-Request-type: `GET`
-**Parameters:**
-
-- `{projectId}` - (part of URI) ID of the project
-
-**Return data:**
-
-- `{categories}` `(JSON)`
+- **Request-type:** `GET`
+- **Parameters:**
+  `{projectId}` - (part of URI) ID of the project
+- **Return data:** `{categories}` `(JSON)`
 
 Fetches an array of valid project file categories. <badge>Since 0.3</badge>
 
@@ -35,19 +31,14 @@ URI: https://<im4>/project/{projectId}/files/category/{categoryId}
 ?include_details={true?}&include_size={true?}&include_filter={true?}
 ```
 
-Request-type: `GET`
-
-**Parameters:**
-
-- `{projectId}` - (part of URI) ID of the project
-- `{categoryId}` - (part of URI) ID of category
-- `{include_details}` – includes more metadata + preview url
-- `{include_size}` – includes width and height of image
-- `{include_filter}` – includes used filter if any and if file can have filter applied
-
-**Return data:**
-
-- `{files}` `(JSON)`
+- **Request-type:** `GET`
+- **Parameters:**
+  - `{projectId}` - (part of URI) ID of the project
+  - `{categoryId}` - (part of URI) ID of category
+  - `{include_details}` – includes more metadata + preview url
+  - `{include_size}` – includes width and height of image
+  - `{include_filter}` – includes used filter if any and if file can have filter applied
+- **Return data:** `{files}` `(JSON)`
 
 Fetches an array of files in given project file category. <badge>Since: 0.4</badge> <br>
 `include_details` <badge>Since: 0.20</badge>
@@ -61,15 +52,11 @@ URI: https://<im4>/project/{projectId}/files/all
 ?include_details={true?}
 ```
 
-Request-type: `GET`
-**Parameters:**
-
-- `{projectId}` - (part of URI) ID of the project
-- `{include_details}` – gives more metadata + preview url
-
-**Return data:**
-
-- `{files}` `(JSON)`
+- **Request-type:** `GET`
+- **Parameters:**
+  - `{projectId}` - (part of URI) ID of the project
+  - `{include_details}` – gives more metadata + preview url
+- **Return data:** `{files}` `(JSON)`
 
 Fetches an array of files in given project file category. <badge>Since: 0.20</badge>
 
@@ -89,16 +76,12 @@ There is also a function for downloading the actual files in a given category. I
 URI: https://<im4>/project/{projectId}/files/category/{categoryId}/download
 ```
 
-Request-type: `GET`
-
-**Parameters:**
-
-- `{projectId}` - (part of URI) ID of the project
-- `{categoryId}` - (part of URI) ID of category
-
-**Return data:**
-
-- `{files}` downloaded resource file(s)
+- **Request-type:** `GET`
+- **Parameters:**
+  - `{projectId}` - (part of URI) ID of the project
+  - `{categoryId}` - (part of URI) ID of category
+- **Return data:**
+  `{files}` downloaded resource file(s)
 
 Fetches actual files in given project file category. <badge>Since: 0.4</badge>
 
@@ -108,16 +91,12 @@ Fetches actual files in given project file category. <badge>Since: 0.4</badge>
 URI: https://<im4>/project/{projectId}/files/all/download
 ```
 
-Request-type: `GET`
-
-**Parameters:**
-
-- `{projectId}` - (part of URI) ID of the project
-- `{categoryId}` - (part of URI) ID of category
-
-**Return data:**
-
-- `{files}` downloaded resource file(s)
+- **Request-type:** `GET`
+- **Parameters:**
+  - `{projectId}` - (part of URI) ID of the project
+  - `{categoryId}` - (part of URI) ID of category
+- **Return data:**
+  `{files}` downloaded resource file(s)
 
 Fetches actual files in given project file category. <badge>Since: 0.4</badge>
 
@@ -131,17 +110,13 @@ The function for uploading files to a project, accepts an array of files given a
 URI: https://<im4>/project/{projectId}/files/category/{categoryId}
 ```
 
-Request-type: `POST`
-
-**Parameters:**
-
-- `{projectId}`: (part of URI) ID of the project
-- `{categoryId}`: (part of URI) ID of category - provide 0 to set file as uncategorized
-- `{files}`: array of files as multipart/form-data
-
-**Return data:**
-
-- `file_ids}`: Array of file ids
+- **Request-type:** `POST`
+- **Parameters:**
+  - `{projectId}`: (part of URI) ID of the project
+  - `{categoryId}`: (part of URI) ID of category - provide 0 to set file as uncategorized
+  - `{files}`: array of files as multipart/form-data
+- **Return data:**
+  `file_ids}`: Array of file ids
 
 Uploads files to given project and category. <badge>Since: 0.3</badge>  
 If uncategorized file, use `categoryId` `0`.
@@ -152,16 +127,12 @@ If uncategorized file, use `categoryId` `0`.
 URI: https://<im4>/project/{projectId}/files/sortorder/{file_ids}
 ```
 
-Request-type: `POST`
-
-**Parameters:**
-
-- `{projectId}`: (part of URI) ID of the project
-- `{file_ids}`: (part of URI) File ids in wanted order
-
-**Return data:**
-
-- `{mixed}` `(JSON)`: `file_id` and new sortcode
+- **Request-type:** `POST`
+- **Parameters:**
+  - `{projectId}`: (part of URI) ID of the project
+  - `{file_ids}`: (part of URI) File ids in wanted order
+- **Return data:**
+  `{mixed}` `(JSON)`: `file_id` and new sortcode
 
 <badge>Since: 0.12</badge>
 
@@ -171,15 +142,13 @@ Request-type: `POST`
 URI: https://<im4>/project/{projectId}/files/{file_ids}/set-metadata
 ```
 
-Request-type: `POST`
-
-**Parameters:**
-
-- `{projectId}`: (part of URI) ID of the project
-- `{file_ids}`: (part of URI) File ids
-- `{caption}`: picture caption
-- `{byline}`: second picture caption – used for flower greetings
-- `{priority}`: setting priority for image (0,1,2)
-- `{category_id}`: setting image category
+- **Request-type:** `POST`
+- **Parameters:**
+  - `{projectId}`: (part of URI) ID of the project
+  - `{file_ids}`: (part of URI) File ids
+  - `{caption}`: picture caption
+  - `{byline}`: second picture caption – used for flower greetings
+  - `{priority}`: setting priority for image (0,1,2)
+  - `{category_id}`: setting image category
 
 <badge>Since: 0.20</badge>

@@ -14,12 +14,11 @@ The API has a helper function to receive all valid project keys/properties which
 URI: https://<im4>/project/{projectId}/keys
 ```
 
-**Request-type:** `GET`  
-**Parameters:** `{projectId}` - (part of URI) `ID` of the project
+- **Request-type:** `GET`
+- **Parameters:** `{projectId}` - (part of URI) `ID` of the project
+- **Return data:**
 
-**Return data:**
-
-```js
+```json
 {[key] => (
     [comment] => Comment on key
     [read] => Readable key
@@ -40,8 +39,8 @@ The general function for updating keys/properties on a project, accepts a JSON a
 URI: https://<im4>/project/{projectId}
 ```
 
-**Request-type:** `POST`  
-**Parameters:** `{data}`: `JSON`  
-**Return data:** HTTP 200 on success
+- **Request-type:** `POST`
+- **Parameters:** `{data}`: `JSON`
+- **Return data:** HTTP 200 on success
 
 Sets properties for given projectId. Data given as a `JSON` array (`key` => `value`).

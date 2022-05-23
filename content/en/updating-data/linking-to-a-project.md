@@ -14,10 +14,10 @@ There is two different ways for linking to a project:
 URI: https://<im4>/iapi/projects/{projectId}/checkaccess/{clientid}
 ```
 
-**Request-type:** `GET`  
-**Parameters:**  
-`{projectId}` - (part of URI) `ID` of the project  
-`{client_id}` (integer): `<given client id>`
+- **Request-type:** `GET`
+- **Parameters:**  
+  `{projectId}` - (part of URI) `ID` of the project  
+  `{client_id}` (integer): `<given client id>`
 
 Client id is included for security reasons. If user already have an im4 sesson running no credential page is shown – else user will be asked for credentials before access to project is checked and project is shown. If no access to project user is redirect `home`
 
@@ -27,8 +27,8 @@ Client id is included for security reasons. If user already have an im4 sesson r
 URI: https://<im4>/project/{projectId}/magic-link?user={email}
 ```
 
-**Request-type:** `GET`  
-**Parameters:** `{projectId}` - (part of URI) `ID` of the project
+- **Request-type:** `GET`
+- **Parameters:** `{projectId}` - (part of URI) `ID` of the project
 
 Api request is done including user email. If a user exist in im4 with exact same email and user has access to project then a magic link is returned. Redirect user to that magic link and user is automatically signed in. Magic link works only once
 
