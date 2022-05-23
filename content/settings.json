@@ -1,0 +1,9 @@
+{
+  "title": "Memosoft Docs",
+  "url": "https://docs.memosoft.no",
+  "logo": {
+    "light": "/logo-light.svg",
+    "dark": "/logo-dark.svg"
+  },
+  "github": "memosoft-dot-no/memo-docs"
+}
