@@ -9,9 +9,9 @@ badge: 'Version: 0.23'
 <img src="/preview.png" class="light-img" width="1280" height="640" alt=""/>
 <img src="/preview-dark.png" class="dark-img" width="1280" height="640" alt=""/>
 
-This document describes the **im4** and **memographics** `API` for external systems.
+This document describes the **inmemory4** and **memographics** `API` for external systems.
 
-<p class="flex items-center">Enjoy light and dark mode:&nbsp;<app-color-switcher class="inline-flex ml-2"></app-color-switcher></p>
+<p class="flex items-center">Enjoy in light or dark mode:&nbsp;<app-color-switcher class="inline-flex ml-2"></app-color-switcher></p>
 
 <alert type="warning">
 Note: This document is under development, and changes will occur!
@@ -32,7 +32,7 @@ Description of the function with parameters etc given underneath the API declara
 
 Every agency that is configured in the application, can set up their own list of authenticated external systems. These external systems are technically connected to a separate user account in inmemory or memographics. This separate user belongs to an agency, and the agency administrator has to enable the external `API` functionality in order to set up the external systems. These external systems will be assigned a client id and a client secret which needs to be used while accessing the `API`.
 
-The list of authenticated external systems is available in the agency administration part of **inmemory** or **memographics**.
+The list of authenticated external systems is available in the agency administration part of **inmemory4** or **memographics**.
 
 ## User login
 
@@ -44,27 +44,30 @@ In general, this `API` is based on `HTTP POST` requests where input is given as 
 
 ## Authentication
 
-In order to be authenticated with **im4**, the external system needs to receive an authentication token. Authentication tokens are long-lived, and never expire. They can however be revoked at any time by the issuing agency. To receive a token, the external system needs to make an API call:
+In order to be authenticated with the **app**, external systems needs to receive an authentication token. Authentication tokens are long-lived, and never expire. They can however be revoked at any time by the issuing agency. To receive a token, the external system needs to make an API call:
 
 **API: request authentication token**
 
 ```js
 URI: https://<im4>/oauth/token
-Request-type: post
-HTTP Headers: None
-Parameters:
-    grant_type (string): ‘client_credentials’
-    client_id (integer): <given client id>
-    client_secret (string): <given client secret>
-    scope: ‘*’
-    All parameters must be sent as form-data.
-Return data (JSON):
-    token_type (string): ‘Bearer’
-    expires_in (int): Number of seconds until expiration
-    access_token (string): Generated access token
-
-The returned access_token needs to be provided in any subsequent API calls.
 ```
+
+- **Request-type:** `post`
+- **HTTP Headers:** _none_
+- **Parameters:**
+
+  - grant_type (string): `client_credentials`
+  - client_id (integer): `<given client id>`
+  - client_secret (string): `<given client secret>`
+  - scope: `\*`  
+    All parameters must be sent as form-data.
+
+- **Return data** (JSON):
+  - `token_type` (string): ‘Bearer’
+  - `expires_in` (int): Number of seconds until expiration
+  - `access_token` (string): Generated access token
+
+The returned `access_token` needs to be provided in any subsequent API calls.
 
 <badge>Since: 0.1</badge>
 
@@ -74,19 +77,20 @@ In addition, an external system can authenticate using a valid username/password
 
 ```js
 URI: https://<im4>/api/app/login
-Request-type: post
-HTTP Headers:
-    Accept: application/json
-Parameters:
-    email (string): <username/email address>
-    password (string): <password>
-    remember_me (boolean, optional): <0/1>
-Return data (JSON):
-    token_type (string): ‘Bearer’
-    expires_at (datetime): Time of expiration
-    access_token (string): Generated access token
-The returned access_token needs to be provided in any subsequent API calls.
 ```
+
+- **Request-type:** `post`
+- **HTTP Headers:**Accept: application/json
+- **Parameters:**
+  - `email` (string): <username/email address>
+  - `password` (string): <password>
+  - `remember_me` (boolean, optional): <0/1>
+- **Return data** (JSON):
+  - `token_type` (string): ‘Bearer’
+  - `expires_at` (datetime): Time of expiration
+  - `access_token` (string): Generated access token
+
+The returned `access_token` needs to be provided in any subsequent API calls.
 
 <badge>Since: 0.4</badge>
 
@@ -97,13 +101,14 @@ In general, for every subsequent API call, the access_token needs to be specifie
 
 ```js
 URI: https://<im4>/<api-call>
-Request-type: POST or GET
-HTTP Headers:
-    Accept: application/json
-    Authorization: Bearer <access_token>
 ```
 
-The `<im4>`-part of the URI is comprised of the server address to the **im4** instance, plus additional paths for the API call. Note that the path is different for Client Authentication and APP authentication:
+- **Request-type:** `POST` or `GET`
+- **HTTP Headers:**
+  - Accept: application/json
+  - Authorization: Bearer `<access_token>`
+
+The `<im4>`-part of the URI is comprised of the server address to the **app** instance, plus additional paths for the API call. Note that the path is different for Client Authentication and APP authentication:
 
 |         |                                               |
 | :------ | :-------------------------------------------- |
