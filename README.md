@@ -1,5 +1,7 @@
 # memosoft-docs
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bba6900d-e5a0-4888-ba52-1b16cdb9d54d/deploy-status)](https://app.netlify.com/sites/memosoft-docs/deploys)
+
 ## Setup
 
 Install dependencies:
