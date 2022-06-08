@@ -32,4 +32,4 @@ URI: https://<im4>/project/{projectId}/magic-link?user={email}
 
 Api request is done including user email. If a user exist in im4 with exact same email and user has access to project then a magic link is returned. Redirect user to that magic link and user is automatically signed in. Magic link works only once
 
-Link to project will normally only work if user is part of agency project is owned by or if agency is part of an agency group user is given access to. If user don’t have access to project, but agency is part of same agency group as users agency there is on last way to get access: If api client is granted access to modify users, access will automatically be given for user to access project agency projects.
+Link to project will normally only work for users in the projects agency, or if the project agency is part of an agency group the user belongs to. If api client has access to change users, access will automatically be given to users of agencies in the same agency group as the projects agency

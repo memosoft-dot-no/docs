@@ -21,7 +21,7 @@ URI: https://<im4>/projects/{agency_id?}
   - `{days}` – Defaults to 120 days if not specified – skipped if search/take set
   - `{search}` – Multi-word search – if specified days is ignored.
   - `{take}` – Limit result – used for paging – if specified days is ignored
-  - `{skip}` – Skip first x results – used for paging – will only work if skip specified
+  - `{skip}` – Skip first x results – used for paging – will only work if take specified
   - `{agency_id}`
 - **Return data:**
   `{mixed}` `(JSON)`
