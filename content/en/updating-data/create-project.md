@@ -1,7 +1,7 @@
 ---
 title: Create new project
 description: 'External systems can create new projects for the agency. Required data are the first- and last name for the project, but any other valid project key can be specified in the JSON input parameters.'
-position: 2
+position: 21
 category: 'Updating data'
 fullscreen: 'true'
 ---

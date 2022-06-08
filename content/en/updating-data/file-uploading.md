@@ -1,7 +1,7 @@
 ---
 title: File uploading
 description: 'The API supports uploading one or more files with the same request. The files can be uploaded to a given category, or as an uncategorized file.'
-position: 6
+position: 25
 category: 'Updating data'
 ---
 

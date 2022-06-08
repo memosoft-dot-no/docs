@@ -1,7 +1,7 @@
 ---
 title: Linking to a project
 description: 'There is two different ways for linking to a project'
-position: 4
+position: 23
 category: 'Updating data'
 fullscreen: 'true'
 ---

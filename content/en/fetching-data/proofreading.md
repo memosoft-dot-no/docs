@@ -1,7 +1,7 @@
 ---
 title: Proofreading information
 description: 'Fetch available proofreadings'
-position: 13
+position: 41
 category: Fetching data
 fullscreen: 'true'
 ---

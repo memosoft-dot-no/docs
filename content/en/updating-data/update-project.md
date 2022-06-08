@@ -1,7 +1,7 @@
 ---
 title: Update project information
 description: 'The API has a helper function to receive all valid project keys/properties which can be set by an external client'
-position: 3
+position: 22
 category: 'Updating data'
 fullscreen: 'true'
 ---

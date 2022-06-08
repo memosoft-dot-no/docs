@@ -3,7 +3,7 @@ title: Introduction
 description: ''
 position: 1
 category: 'General'
-badge: 'Version: 0.23'
+badge: 'Version: 0.24'
 ---
 
 <img src="/preview.png" class="light-img" width="1280" height="640" alt=""/>
