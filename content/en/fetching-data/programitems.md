@@ -42,9 +42,9 @@ URI: https://<im4>/project/{projectId}/programitems/download-schedule
 ```
 
 - **Request-type:** `GET`
-- **Parameters:**
-  - `{projectId}` (part of URI): ID of the project
-  - `{type}` (string): Type of schedule. If set to full - song verses will be included
+- **Parameters:**<br>
+  `{projectId}` (part of URI): `ID` of the project<br>
+  `{type}` (string): Type of schedule. If set to `full` song verses will be included
 - **Return data:**
   `{file}` downloaded pdf file
 
@@ -59,10 +59,8 @@ URI: https://<im4>/project/{projectId}/program_templates
 ```
 
 - **Request-type:** `GET`
-- **Parameters:**
-  - `{projectId}` (part of URI): ID of the project
-- **Return data:**
-  `{mixed}` `(JSON)` JSON list with template id, scope, name and number of program items
+- **Parameters:** `{projectId}` (part of URI): `ID` of the project
+- **Return data:** `{mixed}` `(JSON)` JSON list with template id, scope, name and number of program items
 
 ### Import program template
 
@@ -74,7 +72,7 @@ URI: https://<im4>/project/{projectId}/programitems/import/{sourcetemplate}
 ```
 
 - **Request-type:** `GET`
-- **Parameters:**
-  - `{projectId}` (part of URI): ID of the project
-  - `{sourcetemplate}` (part of URI): Program template id
+- **Parameters:**<br>
+  `{projectId}` (part of URI): `ID` of the project<br>
+  `{sourcetemplate}` (part of URI): Program template id
 - **Return data:** HTTP 200 on success
