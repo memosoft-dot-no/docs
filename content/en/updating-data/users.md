@@ -88,4 +88,16 @@ URI: https://<im4>/agency/{agency}/user/{user}
   `{user}` (part of URI): ID of the user
 - **Return data:** `HTTP 200` on success
 
+### Fetch agencies
+
+Fetch list of all agencies in agency group. 
+
+```js
+URI: https://<im4>/agencies
+```
+
+- **Request-type:** `GET`
+- **Parameters:** _none_
+- **Return data** `{mixed}` `(JSON)`
+
 
