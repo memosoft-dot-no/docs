@@ -1,13 +1,21 @@
 ---
 title: Design archive
-description: 'Fetch available designs for agency'
-position: 43
+description: ''
+position: 45
 category: Fetching data
-fullscreen: 'true'
 badge: 'Since 0.24'
 ---
 
-### Fetch all available designs for agency
+## Designs
+
+A design is a background used in a printed product. **app** includes a big archive with categorized and tagged designs.
+
+### Fetch all designs for agency
+
+Fetches list of all available designs. Both global and all designs agency has `acl` access to.
+Continue reading to find information about how to create a local cache of designs
+
+<badge>Since 0.4</badge>
 
 ```js
 URI: https://<im4>/designs
@@ -17,17 +25,11 @@ URI: https://<im4>/designs
 - **Parameters:** _none_
 - **Return data** `{mixed}` `(JSON)`
 
-Fetches list of all available designs. Both global and all designs agency has acl access to.
-Continue reading to find information about how to create a local cache of designs
+<alert>`/designs` request give all designs agency has access to, but if client is implementing a global cache of designs this list of designs cannot be served for all agencies.<br><br>In that case – load /global once and /acl per agency and store in cache. <br><br>Concatenation of global list and an agencies acl list gives the same result as the /designs request. This way designs can be cached e.g. once each night and then no requests needed to get designs through API untnil next night </alert>
 
-<badge>Since 0.4</badge>
+### Fetch all global designs
 
-`/designs` request above give all designs agency has access to, but If implementing a global local cached of designs this list of designs cannot be served for all agencies.
-In that case – load /global once and /acl per agency and store in cache.
-
-Concatenation of global list and an agencies acl list gives the same result as the /designs request. This way designs can be cached e.g. once each night and then no requests needed to get designs through API untnil next night
-
-### Fetch all designs without acl restrictions
+Fetch list of all global design – all designs with no acl restrictions. <badge>Since 0.24</badge>
 
 ```js
 URI: https://<im4>/designs/global
@@ -37,11 +39,9 @@ URI: https://<im4>/designs/global
 - **Parameters:** _none_
 - **Return data** `{mixed}` `(JSON)`
 
-Fetches list of all global design – all designs with no acl restrictions.
+### Fetch all restricted designs available for agency
 
-<badge>Since 0.24</badge>
-
-### Fetch all designs with acl restrictions and where agency passes these restrictions
+Fetch list of all designs where acl restrictions is set and where agency passes these restrictions. <badge>Since 0.24</badge>
 
 ```js
 URI: https://<im4>/designs/acl
@@ -51,6 +51,3 @@ URI: https://<im4>/designs/acl
 - **Parameters:** _none_
 - **Return data** `{mixed}` `(JSON)`
 
-Fetches list of all designs where acl restrictions is set and where agency passes these restrictions.
-
-<badge>Since 0.24</badge>

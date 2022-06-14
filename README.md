@@ -7,7 +7,7 @@
 Install dependencies:
 
 ```bash
-npm run install
+npm install
 ```
 
 ## Development

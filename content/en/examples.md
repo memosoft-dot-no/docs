@@ -21,19 +21,6 @@ $r = $client->post(
 $token = json_decode((string) $r->getBody(), true)['access_token'];
 ```
 
-## Access the API with APP authentication
-
-```php[php]
-$r = $client->post(
-    'https://no-stage-inmemory4.gc.no/api/app/login', [
-        'form_params' => [
-            'email' => USER_EMAIL,
-            'password' => USER_PASSWORD,
-            'remember_me' => 1 ] ] );
-
-$token = json_decode((string) $r->getBody(), true)['access_token'];
-```
-
 ## Create new project
 
 ```php[php]

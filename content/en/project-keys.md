@@ -1,38 +1,38 @@
 ---
-title: Available project keys
+title: Project keys
 description: ''
-position: 60
-category: Project keys
+position: 11
+category: General
 ---
 
-This chapter provides a complete list of all available project keys. This list can also be retrieved programmatically by using the **_get valid project keys_** helper function.
+`Projects` is the main part of the **app**. This chapter provides a complete list of all available project keys. This list can also be retrieved programmatically by using the [get valid project keys](#fetch-available-project-keys) helper function.
 
-### Valid project keys
-
+## Valid project keys
+### Project details
 | Key                       | R/W | Type       | Comment                                                                                                                                                                                                                           |
 | :------------------------ | :-- | :--------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `details`                 | R   | -          | Shortcut to get most used project keys. Can be combined with other keys in same request                                                                                                                                           |
-| `ordernumber`             | RW  | String     | Order number for project                                                                                                                                                                                                          |
-| `subject_firstname`       | RW  | String     | First name                                                                                                                                                                                                                        |
-| `subject_lastname`        | RW  | String     | Last name                                                                                                                                                                                                                         |
-| `subject_dob`             | RW  | Date       | Date of birth (YYYY-MM-DD)                                                                                                                                                                                                        |
+| `details`                 | R   | -          | Shortcut to get most used project keys.<br> Can be combined with other keys in same request. <br>(keys with (*) in comment is included in details)                                                                                |
+| `agency_id  `             | R   | Int        | ID of owner agency (*)                                                                                                                                                                                                            |
+| `ordernumber`             | RW  | String     | Order number for project (*)                                                                                                                                                                                                      |
+| `subject_firstname`       | RW  | String     | First name (*)                                                                                                                                                                                                                    |
+| `subject_lastname`        | RW  | String     | Last name (*)                                                                                                                                                                                                                     |
+| `subject_dob`             | RW  | Date       | Date of birth (YYYY-MM-DD) (*)                                                                                                                                                                                                    |
 | `subject_dob_formatted`   | R   | String     | Date of birth formatted                                                                                                                                                                                                           |
-| `subject_dod`             | RW  | Date       | Date of death (YYYY-MM-DD)                                                                                                                                                                                                        |
+| `subject_dod`             | RW  | Date       | Date of death (YYYY-MM-DD) (*)                                                                                                                                                                                                    |
 | `subject_dod_formatted`   | R   | String     | Date of death formatted                                                                                                                                                                                                           |
-| `ceremony_date`           | RW  | Date       | Date of ceremony (YYYY-MM-DD)                                                                                                                                                                                                     |
-| `ceremony_time`           | RW  | Time       | Time of ceremony (HH:MM)                                                                                                                                                                                                          |
+| `ceremony_date`           | RW  | Date       | Date of ceremony (YYYY-MM-DD) (*)                                                                                                                                                                                                 |
+| `ceremony_time`           | RW  | Time       | Time of ceremony (HH:MM) (*)                                                                                                                                                                                                      |
 | `ceremony_date_formatted` | R   | String     | Date of ceremony formatted                                                                                                                                                                                                        |
 | `ceremony_type`           | R   | Array      | Type of ceremony                                                                                                                                                                                                                  |
 | `ceremony_type`           | W   | int        | ID of ceremony type                                                                                                                                                                                                               |
 | `funeral_type`            | R   | Array      | Type of funeral                                                                                                                                                                                                                   |
 | `funeral_type`            | W   | Int        | ID of funeral type                                                                                                                                                                                                                |
-| `contact_person`          | R   | Array      | Assigned contact person. See table `contact_person` for more details.                                                                                                                                                             |
+| `contact_person`          | R   | Array      | Assigned contact person. (*) See table `contact_person` for more details.                                                                                                                                                         |
 | `contact_person`          | W   | String/Int | Email or ID of contact person (agency-user)                                                                                                                                                                                       |
-| `contact_persons`         | R   | Array      | List of contact persons available for this project (agency users or users in agencies with shared access to agency projects)                                                                                                      |
 | `venue`                   | R   | Array      | Assigned venue. See table venue for mor details                                                                                                                                                                                   |
 | `venue`                   | W   | Int        | ID of venue                                                                                                                                                                                                                       |
-| `venue_name`              | RW  | String     | Name of the venue.                                                                                                                                                                                                                |
-| `participants`            | RW  | Array      | List of participants (where role is set). See table participants for more details. Write: Overwrite if matching role, otherwise only adding new. No existing are removed                                                          |
+| `venue_name`              | RW  | String     | Name of the venue. (*)                                                                                                                                                                                                            |
+| `participants`            | RW  | Array      | List of participants (where role is set) (*). See table participants for more details. Write: Overwrite if matching role, otherwise only adding new. No existing are removed                                                      |
 | `programitems`            | RW  | Array      | List of program items for the ceremony. See table programitems for more details.                                                                                                                                                  |
 | `texts`                   | RW  | Array      | List of texts used in the project. See table texts for more details.                                                                                                                                                              |
 | `greetings`               | RW  | Array      | List of greetings. See table greetings for more details.                                                                                                                                                                          |
@@ -40,14 +40,23 @@ This chapter provides a complete list of all available project keys. This list c
 | `delivery`                | R   | Array      | List of delivery addresses.                                                                                                                                                                                                       |
 | `link`                    | RW  | String     | URI to memorial page                                                                                                                                                                                                              |
 | `designs`                 | RW  | Array      | List of preferred designs per product type See table preferred_designs for more details. Write: Adding designs not already set for specific `product_type` Write: Adding designs not already set. No existing designs are removed |
-| `bitnet_id`               | RW  | String     | Bitnet project id                                                                                                                                                                                                                 |
-| `eulogica_id`             | RW  | String     | Eulogica project id                                                                                                                                                                                                               |
-| `timecut_id`              | RW  | String     | Id used for Timecut integration (if not ordernumber is correct for integration)                                                                                                                                                   |
-| `adstate_id`              | RW  | String     | Id used for Adstate integration (if not ordernumber is correct for integration)                                                                                                                                                   |
-| `proofreading_batches`    | R   | Array      | List of proofreading batches. See table proofreading batches for more details                                                                                                                                                     |
 | `orders`                  | R   | Array      | List of orders. See table orders for more details.                                                                                                                                                                                |
-| `order/{id}`              | R   | Array      | Fetch all info for one order.                                                                                                                                                                                                     |
+| `timecut_id`              | RW  | String     | Id used for Timecut integration (if not ordernumber is correct for integration)                                                                                                                                                   |
+| `eulogica_id`             | RW  | String     | Eulogica project id                                                                                                                                                                                                               |
+| `bitnet_id`               | RW  | String     | Bitnet project id                                                                                                                                                                                                                 |
+| `adstate_id`              | RW  | String     | Id used for Adstate integration (if not ordernumber is correct for integration)                                                                                                                                                   |
 | `registration_link`       | R   | String     | Short link to digital registration                                                                                                                                                                                                |
+| `booklet_link`            | R   | String     | Short link to booklet poster                                                                                                                                                                                                      |
+
+### Additional project related details
+
+Some custom details not included when requesting full project information
+
+| Key                       | R/W | Type       | Comment                                                                                                                                                                                                                           |
+| :------------------------ | :-- | :--------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `contact_persons`         | R   | Array      | List of contact persons available for this project (agency users or users in agencies with shared access to agency projects)                                                                                                      |
+| `proofreading_batches`    | R   | Array      | List of proofreading batches. See table proofreading batches for more details                                                                                                                                                     |
+| `order/{id}`              | R   | Array      | Fetch all info for one order.                                                                                                                                                                                                     |
 
 ### Table: `contact_person`
 
@@ -101,12 +110,7 @@ This chapter provides a complete list of all available project keys. This list c
 | `title`              | RW  | String | Title of song / song-number                                                                                                         |
 | `text`               | RW  | String | Text of song                                                                                                                        |
 | `byline`             | RW  | String | Author/composer/byline                                                                                                              |
-| `title_caps`         | R   | Bool   | Not used                                                                                                                            |
-| `title_color`        | R   | String | Not used                                                                                                                            |
-| `byline_color`       | R   | String | Not used                                                                                                                            |
-| `align`              | R   | String | Not used                                                                                                                            |
-| `columns`            | R   | Bool   | Not used                                                                                                                            |
-| `verses`             | RW  | Array  | List of verse numbers <br> Write: Could also be a commaseparated string of verses, or a span. E.g: “1,3-4,5” gives vers 1,3,4 and 5 |
+| `verses`             | RW  | Array  | List of verse numbers <br> Write: Could also be a comma separated string of verses, or a span. E.g: “1,3-4,5” gives vers 1,3,4 and 5 |
 | `song_number`        | R   | Int    | Not used                                                                                                                            |
 | `archive_title`      | R   | String | Not used                                                                                                                            |
 
@@ -117,10 +121,6 @@ This chapter provides a complete list of all available project keys. This list c
 | `title`        | RW  | String | Title    |
 | `text`         | RW  | String | Text     |
 | `byline`       | RW  | String | Byline   |
-| `title_caps`   | R   | Bool   | Not used |
-| `title_color`  | R   | String | Not used |
-| `byline_color` | R   | String | Not used |
-| `align`        | R   | String | Not used |
 
 ### Program item subtable: `participants`
 
@@ -245,7 +245,7 @@ This chapter provides a complete list of all available project keys. This list c
 | `numbers`             | R   | Int     | Number of items in order                                                                                                                                                                 |
 | `product`             | R   | String  | Product name                                                                                                                                                                             |
 | `price`               | R   | Float   | Order price                                                                                                                                                                              |
-| `extra`               | R   | Array   | Extra wares on ordre. Array with Name and Numbers for each ware.                                                                                                                         |
+| `extra`               | R   | Array   | Extra wares on order. Array with Name and Numbers for each ware.                                                                                                                         |
 | `currency`            | R   | String  | Price currency                                                                                                                                                                           |
 | `email`               | R   | String  | Email for order                                                                                                                                                                          |
 | `status`              | R   | Array   | Label, Color and Date of last status                                                                                                                                                     |
@@ -254,3 +254,26 @@ This chapter provides a complete list of all available project keys. This list c
 | `is_service`          | R   | Boolean | Order of a service                                                                                                                                                                       |
 
 Loading a single order also includes info about recipients, addresses and all order status updates
+
+## Fetch available project keys
+
+The API has a helper function to receive all valid project keys/properties which can be set by an external client.
+`ProjectId` has to be specified because some keys can be agency or project specific 
+
+```js
+URI: https://<im4>/project/{projectId}/keys
+```
+
+- **Request-type:** `GET`
+- **Parameters:** `{projectId}` (part of URI): `ID` of the project
+- **Return data:**
+
+```json
+{[key] => (
+    [comment] => Comment on key
+    [read] => Readable key
+    [write] => Writable key
+), ... }
+```
+
+<alert> Note: every property comes with a comment and a flag if it is readable and/or writeable.</alert>
