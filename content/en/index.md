@@ -46,7 +46,7 @@ In order to be authenticated with the **app**, external systems needs to receive
 URI: https://<im4>/oauth/token
 ```
 
-- **Request-type:** `post` <br>
+- **Request-type:** `POST` <br>
 - **HTTP Headers:** _none_ <br>
 - **Parameters:** <br>
   `{grant_type}` (string): ‘client_credentials‘ <br>
@@ -63,6 +63,8 @@ URI: https://<im4>/oauth/token
 The returned `access_token` needs to be provided in any subsequent API calls.
 
 ### General HTTP headers
+
+For every subsequent API call after authentication, the `access_token` needs to be specified as part of the HTTP headers:
 
 ```js
 URI: https://<im4>/<api-call>
